@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Printable Lamp Lexicon</title>
+<meta name="description" content="Prompt vocabulary for 3D-printed lamps: forms, silhouettes, patterns, mount types, sockets and print terms.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2l3.5 9.5L29 15l-9.5 3.5L16 28l-3.5-9.5L3 15l9.5-3.5z' fill='%23c9a7ff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&family=VT323&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="wrap">
+<header class="hero">
+  <div class="hero-deco" aria-hidden="true"><span class="star s1">✦</span><span class="star s2">✧</span><span class="star s3">⋆</span><span class="heart">♡</span></div>
+  <span class="eyebrow">♡ 3D-printed lighting · prompt vocabulary ♡</span>
+  <h1>Printable Lamp Lexicon</h1>
+  <p class="lede">The words that turn a vague idea into a printable, wire-able lamp. Every good lamp prompt answers the same six questions, in roughly this order:</p>
+  <div class="formula"><b>[size]</b> + <b>[lamp form]</b> + <b>[shade silhouette]</b> + <b>[surface pattern]</b> + <i>[mount type]</i> + <b>[socket / bulb]</b> + <b>[print constraints]</b></div>
+</header>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>✧ print slow ✧ measure your socket ✧ LED bulbs only ✧ 0.4 mm clearance is your friend ✧ glow softly ✧ vase mode forever ✧ </span><span>✧ print slow ✧ measure your socket ✧ LED bulbs only ✧ 0.4 mm clearance is your friend ✧ glow softly ✧ vase mode forever ✧ </span></div></div>
+<nav class="toc" aria-label="Sections">
+  <a href="#builder">Prompt builder</a>
+  <a href="#forms">Lamp forms</a>
+  <a href="#silhouettes">Silhouettes</a>
+  <a href="#patterns">Surface patterns</a>
+  <a href="#mounts">Mount types</a>
+  <a href="#choose">Choosing a mount</a>
+  <a href="#electrical">Socket &amp; electrical</a>
+  <a href="#print">Print terms</a>
+  <a href="#examples">Example prompts</a>
+</nav>
+
+<!-- BUILDER -->
+<section id="builder" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ prompt_builder.exe</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+  <div class="sec-head"><span class="eyebrow">Try it</span><h2>Prompt builder</h2>
+  <p class="note">Pick from the lexicon below and copy the result into your CAD agent.</p></div>
+  <div class="builder">
+    <div class="fields">
+      <label for="b-size">Height (mm)<input id="b-size" type="number" min="60" max="600" value="200"></label>
+      <label for="b-form">Lamp form<select id="b-form"></select></label>
+      <label for="b-sil">Silhouette<select id="b-sil"></select></label>
+      <label for="b-pat">Surface pattern<select id="b-pat"></select></label>
+      <label for="b-mount">Mount type<select id="b-mount"></select></label>
+      <label for="b-sock">Socket<select id="b-sock"></select></label>
+      <label for="b-mat">Material<select id="b-mat"></select></label>
+    </div>
+    <div class="out"><output id="b-out" aria-live="polite"></output><button id="b-copy" type="button">Copy prompt</button></div>
+  </div>
+</div></section>
+
+<!-- FORMS -->
+<section id="forms" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ lamp_forms.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+  <div class="sec-head"><span class="eyebrow">1 · What kind of lamp</span><h2>Lamp forms</h2>
+  <p class="note">The form decides which way gravity pulls on the joint. That matters more than anything else when choosing a mount.</p></div>
+  <dl class="terms">
+    <div class="term"><dt>table lamp</dt><dd>Base sits on a surface, shade rests on top. Joint is in compression; almost any mount works.</dd></div>
+    <div class="term"><dt>bedside / accent lamp</dt><dd>Small table lamp, 120–250 mm tall, usually 2–5 W LED. The most forgiving first project.</dd></div>
+    <div class="term"><dt>mushroom lamp</dt><dd>Wide domed cap on a slim stem. Cap overhangs the base, so it needs a positive lock, not just friction.</dd></div>
+    <div class="term"><dt>pendant</dt><dd>Hangs from the ceiling by its cord. The shade hangs below the socket, so the joint is in tension.</dd></div>
+    <div class="term"><dt>wall sconce</dt><dd>Wall-mounted back plate (keyhole slots) with a shade attached sideways. Joint is in shear.</dd></div>
+    <div class="term"><dt>floor lamp</dt><dd>Tall stem (lamp pipe) plus a weighted base. The shade is often too large for one print and is split into segments.</dd></div>
+    <div class="term"><dt>desk / task lamp</dt><dd>Directed light with an arm or hinge. Uses articulating joints and a cone shade.</dd></div>
+    <div class="term"><dt>lantern</dt><dd>Enclosed shade on all sides, often with a handle or top loop. Good for cord-and-plug or battery LED.</dd></div>
+    <div class="term"><dt>clip-on / clamp lamp</dt><dd>Spring clamp on the base, attaches to a shelf or headboard.</dd></div>
+    <div class="term"><dt>night light / puck light</dt><dd>Low-power LED module or a battery puck instead of a mains socket. Fewest safety constraints.</dd></div>
+    <div class="term"><dt>lithophane lamp</dt><dd>Thin shade panel that shows an image when backlit. Shade usually a cylinder or a polygon of flat panels.</dd></div>
+    <div class="term"><dt>modular / stackable</dt><dd>Shade printed as rings or tiers that stack. Each tier joint is its own small mount.</dd></div>
+  </dl>
+</div></section>
+
+<!-- SILHOUETTES -->
+<section id="silhouettes" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ silhouettes.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+  <div class="sec-head"><span class="eyebrow">2 · Overall shape</span><h2>Shade silhouettes</h2></div>
+  <dl class="terms">
+    <div class="term"><dt>drum / cylinder</dt><dd>Straight vertical sides, same top and bottom diameter.</dd></div>
+    <div class="term"><dt>empire</dt><dd>Narrow top, wide bottom, straight sloping sides. The classic table lamp shade.</dd></div>
+    <div class="term"><dt>coolie / cone</dt><dd>Very narrow top, very wide bottom. Throws light down.</dd></div>
+    <div class="term"><dt>bell</dt><dd>Sides curve outward at the bottom like a bell.</dd></div>
+    <div class="term"><dt>dome</dt><dd>Half-sphere cap. Common for pendants and mushroom lamps.</dd></div>
+    <div class="term"><dt>globe / sphere</dt><dd>Fully round with openings at top and bottom for the socket and heat.</dd></div>
+    <div class="term"><dt>hourglass / waisted</dt><dd>Pinched in the middle. Prints well because the overhangs stay gentle.</dd></div>
+    <div class="term"><dt>vase / urn</dt><dd>Organic bulge with a narrower neck. Good fit for vase-mode printing.</dd></div>
+    <div class="term"><dt>lofted profile</dt><dd>Shape blended between two or more cross-sections, such as a circle at the bottom and a hexagon at the top.</dd></div>
+    <div class="term"><dt>revolved profile</dt><dd>A 2D curve spun around the center axis. Describe it with points: "base Ø120, widest Ø160 at 80 mm, top Ø90".</dd></div>
+    <div class="term"><dt>polygonal / n-gon</dt><dd>Flat sides instead of a circle: "8-sided", "hexagonal".</dd></div>
+    <div class="term"><dt>tapered</dt><dd>Any shade that narrows toward one end. Give the taper angle or both diameters.</dd></div>
+  </dl>
+</div></section>
+
+<!-- PATTERNS -->
+<section id="patterns" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ surface_patterns.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+  <div class="sec-head"><span class="eyebrow">3 · Surface treatment</span><h2>Surface patterns</h2>
+  <p class="note">Add a number to any of these and you get a different lamp: rib count, twist angle, cell size, amplitude.</p></div>
+  <div class="group-title">Linear and rotational</div>
+  <dl class="terms">
+    <div class="term"><dt>ribbed / fluted</dt><dd>Vertical ridges (ribs stick out, flutes cut in). Key params: <code>rib count</code>, <code>rib depth</code>.</dd></div>
+    <div class="term"><dt>twisted rib / helical twist</dt><dd>Ribs that rotate as they rise. Key param: <code>twist angle</code> top to bottom, e.g. 90° or 180°.</dd></div>
+    <div class="term"><dt>pleated</dt><dd>Sharp zig-zag folds like a paper lampshade.</dd></div>
+    <div class="term"><dt>wave / sinusoidal</dt><dd>Surface rippled by a sine wave. Params: <code>amplitude</code>, <code>frequency</code>, vertical or horizontal.</dd></div>
+    <div class="term"><dt>stacked rings / tiered</dt><dd>Horizontal bands or discs with gaps. Lets light escape sideways.</dd></div>
+    <div class="term"><dt>louvered / slatted</dt><dd>Angled horizontal fins that block direct glare.</dd></div>
+    <div class="term"><dt>spiral</dt><dd>One continuous ridge winding up the shade.</dd></div>
+  </dl>
+  <div class="group-title">Faceted and geometric</div>
+  <dl class="terms">
+    <div class="term"><dt>faceted / low-poly</dt><dd>Surface made of flat triangles or polygons. Param: <code>facet count</code>.</dd></div>
+    <div class="term"><dt>origami / Miura fold</dt><dd>Folded-paper geometry with alternating peaks and valleys.</dd></div>
+    <div class="term"><dt>diamond / argyle</dt><dd>Crossing diagonal grooves forming diamonds.</dd></div>
+    <div class="term"><dt>Penrose / Islamic tiling</dt><dd>Non-repeating or star-based tile patterns, usually cut through as openings.</dd></div>
+  </dl>
+  <div class="group-title">Organic and generative</div>
+  <dl class="terms">
+    <div class="term"><dt>voronoi</dt><dd>Irregular cell pattern like dried mud or leaf veins, cut through the wall. Params: <code>cell count</code>, <code>strut width</code>.</dd></div>
+    <div class="term"><dt>gyroid / TPMS lattice</dt><dd>Smooth, continuous 3D lattice. Diffuses light well and prints without supports.</dd></div>
+    <div class="term"><dt>hex lattice / honeycomb</dt><dd>Hexagonal cells, as openings or as raised texture.</dd></div>
+    <div class="term"><dt>perforated</dt><dd>Grid or scatter of round holes. Params: <code>hole Ø</code>, <code>spacing</code>, <code>gradient</code>.</dd></div>
+    <div class="term"><dt>reaction-diffusion / coral</dt><dd>Organic maze-like growth texture. Usually made in Blender or nTop and merged in.</dd></div>
+    <div class="term"><dt>superformula</dt><dd>One equation that produces flower, star or starfish cross-sections. Good for lofted shades.</dd></div>
+    <div class="term"><dt>knurled / textured</dt><dd>Fine surface texture, mostly for grip or to hide layer lines.</dd></div>
+  </dl>
+  <div class="group-title">Light behavior</div>
+  <dl class="terms">
+    <div class="term"><dt>diffuser / opal effect</dt><dd>Solid thin wall that glows evenly. Use natural or white translucent filament.</dd></div>
+    <div class="term"><dt>cut-through vs. relief</dt><dd>Cut-through casts patterns on the walls. Relief keeps the shade solid and glows in bands of thickness.</dd></div>
+    <div class="term"><dt>double-wall / inner diffuser</dt><dd>Patterned outer shell plus a plain inner sleeve to hide the bulb.</dd></div>
+    <div class="term"><dt>lithophane</dt><dd>Image encoded as wall thickness. Thick = dark, thin = bright.</dd></div>
+  </dl>
+</div></section>
+
+<!-- MOUNTS -->
+<section id="mounts" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ mount_types.exe</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+  <div class="sec-head"><span class="eyebrow">4 · How the shade meets the base</span><h2>Mount types</h2>
+  <p class="note">Think of every mount as an answer to three questions: <strong>what motion attaches it</strong> (drop, push, twist, slide), <strong>what keeps it there</strong> (gravity, friction, a hook, a magnet), and <strong>what parts are not printed</strong> (magnets, screws, a store-bought fitter). Filter by the motion:</p></div>
+  <div class="filters" role="group" aria-label="Filter mounts by motion">
+    <button class="chip" type="button" data-f="all" aria-pressed="true">All</button>
+    <button class="chip" type="button" data-f="drop" aria-pressed="false">Drop / rest</button>
+    <button class="chip" type="button" data-f="push" aria-pressed="false">Push / snap</button>
+    <button class="chip" type="button" data-f="twist" aria-pressed="false">Twist</button>
+    <button class="chip" type="button" data-f="slide" aria-pressed="false">Slide</button>
+    <button class="chip" type="button" data-f="hardware" aria-pressed="false">Uses hardware</button>
+  </div>
+
+  <div class="mounts" id="mountGrid">
+
+    <!-- Bayonet -->
+    <article class="mount" data-m="twist">
+      <figure><svg viewBox="0 0 260 150" role="img" aria-label="Bayonet: pin on base slides down an L-shaped slot in the shade collar, then rotates to lock">
+        <rect class="s-shade" x="40" y="20" width="180" height="70" rx="4"/>
+        <path class="s-base" d="M90 40 v25 h40" fill="none"/>
+        <path d="M84 34 h14 v24 h40 v14 h-54 z" fill="var(--bg)" stroke="var(--part)" stroke-width="2"/>
+        <circle class="s-hw" cx="91" cy="44" r="6"/>
+        <path class="s-arrow" d="M91 52 v10 q0 4 4 4 h28"/><path class="s-head" d="M127 66 l-7 -4 v8 z"/>
+        <rect class="s-base" x="40" y="96" width="180" height="34" rx="4"/>
+        <text class="s-label" x="150" y="50">L-slot in shade collar</text>
+        <text class="s-label" x="46" y="145">pin / lug on base</text>
+      </svg></figure>
+      <div class="body">
+        <div class="top"><h3>Bayonet (twist-lock)</h3><div class="tags"><span class="tag ease-easy">easy print</span><span class="tag">twist</span></div></div>
+        <p>Lugs on one part drop into L-shaped slots on the other, then a short twist locks them. Same idea as a camera lens or a GU10 bulb.</p>
+        <dl class="kv"><dt>Holds by</dt><dd>Lug trapped under slot ledge</dd><dt>Params</dt><dd>lug count (2–4), lug size, twist angle (20–45°), radial clearance 0.3–0.5 mm</dd><dt>Upgrade</dt><dd>Add a small detent bump at the end of travel so it clicks</dd></dl>
+        <p class="say">Say: <span>"3-lug bayonet, 30° twist, 0.4 mm clearance, detent click"</span></p>
+      </div>
+    </article>
+
+    <!-- Threaded -->
+    <article class="mount" data-m="twist">
+      <figure><svg viewBox="0 0 260 150" role="img" aria-label="Threaded collar: shade has internal threads that screw onto external threads on the base">
+        <rect class="s-shade" x="70" y="20" width="120" height="58" rx="4"/>
+        <g stroke="var(--part)" stroke-width="2"><path d="M82 60 l96 -8"/><path d="M82 70 l96 -8"/></g>
+        <rect class="s-base" x="80" y="78" width="100" height="22"/>
+        <g stroke="var(--ink)" stroke-width="2"><path d="M80 84 l100 -6"/><path d="M80 94 l100 -6"/></g>
+        <rect class="s-base" x="50" y="100" width="160" height="32" rx="4"/>
+        <path class="s-arrow" d="M200 40 a26 10 0 1 1 -10 -12"/><path class="s-head" d="M190 22 l2 10 l7 -6 z"/>
+        <text class="s-label" x="18" y="58">internal</text><text class="s-label" x="18" y="70">thread</text>
+        <text class="s-label" x="18" y="92">external</text>
+      </svg></figure>
+      <div class="body">
+        <div class="top"><h3>Threaded collar (screw-on)</h3><div class="tags"><span class="tag ease-med">medium</span><span class="tag">twist</span></div></div>
+        <p>Shade screws onto the base like a jar lid. Very secure and looks seamless, but needs a coarse thread to print well.</p>
+        <dl class="kv"><dt>Holds by</dt><dd>Thread engagement</dd><dt>Params</dt><dd>pitch 3–5 mm, trapezoidal or buttress profile, 1.5–3 turns, 0.4 mm clearance, 45° thread flank</dd><dt>Watch</dt><dd>Fine metric threads fail when printed; ask for a "printable coarse thread"</dd></dl>
+        <p class="say">Say: <span>"screw-on collar, 4 mm pitch trapezoidal thread, 2 turns"</span></p>
+      </div>
+    </article>
+
+    <!-- Cantilever snap -->
+    <article class="mount" data-m="push">
+      <figure><svg viewBox="0 0 260 150" role="img" aria-label="Cantilever snap hooks: flexible arms on shade flex inward then hook under a lip on the base">
+        <rect class="s-shade" x="50" y="20" width="160" height="36" rx="4"/>
+        <path class="s-shade" d="M78 56 v40 l-8 0 l0 -6 l-4 0 z"/>
+        <path class="s-shade" d="M182 56 v40 l8 0 l0 -6 l4 0 z"/>
+        <path class="s-base" d="M60 92 h24 v10 h92 v-10 h24 v40 h-140 z"/>
+        <path class="s-arrow" d="M130 30 v40"/><path class="s-head" d="M130 76 l-5 -8 h10 z"/>
+        <text class="s-label" x="196" y="76">flex arm</text>
+        <text class="s-label" x="86" y="120">catch lip</text>
+      </svg></figure>
+      <div class="body">
+        <div class="top"><h3>Cantilever snap hooks</h3><div class="tags"><span class="tag ease-med">medium</span><span class="tag">push</span></div></div>
+        <p>Flexible arms with a hooked tip bend as you push down, then spring back under a lip. Your "clasp" in its simplest form.</p>
+        <dl class="kv"><dt>Holds by</dt><dd>Hook under undercut</dd><dt>Params</dt><dd>arm length ≥ 5× thickness, hook depth 0.8–1.5 mm, 30° lead-in, 90° retention face (permanent) or 45° (removable)</dd><dt>Watch</dt><dd>Print arms vertically along layers or they snap at a layer line. PETG flexes better than PLA</dd></dl>
+        <p class="say">Say: <span>"4 cantilever snap hooks, 45° release angle so it can be removed"</span></p>
+      </div>
+    </article>
+
+    <!-- Annular snap -->
+    <article class="mount" data-m="push">
+      <figure><svg viewBox="0 0 260 150" role="img" aria-label="Annular snap: a continuous bead around the base pops into a groove inside the shade ring">
+        <rect class="s-shade" x="60" y="22" width="140" height="62" rx="4"/>
+        <rect x="76" y="44" width="108" height="40" fill="var(--bg)"/>
+        <path d="M76 58 q-5 4 0 8 M184 58 q5 4 0 8" fill="none" stroke="var(--part)" stroke-width="2"/>
+        <rect class="s-base" x="80" y="58" width="100" height="40"/>
+        <circle class="s-hw" cx="80" cy="62" r="4"/><circle class="s-hw" cx="180" cy="62" r="4"/>
+        <rect class="s-base" x="50" y="98" width="160" height="32" rx="4"/>
+        <text class="s-label" x="196" y="64">bead ↔ groove</text>
+      </svg></figure>
+      <div class="body">
+        <div class="top"><h3>Annular snap ring</h3><div class="tags"><span class="tag ease-med">medium</span><span class="tag">push</span></div></div>
+        <p>A continuous rounded bead around the base pops into a matching groove inside the shade. Like a pen cap or a food container lid.</p>
+        <dl class="kv"><dt>Holds by</dt><dd>Hoop flex over full circumference</dd><dt>Params</dt><dd>bead height 0.3–0.6 mm, thin shade wall at the groove, add 2–4 relief slots to make it flex</dd><dt>Watch</dt><dd>Too stiff in PLA without relief slots</dd></dl>
+        <p class="say">Say: <span>"annular snap fit, 0.5 mm bead, 4 relief slots in collar"</span></p>
+      </div>
+    </article>
+
+    <!-- Friction -->
+    <article class="mount" data-m="push">
+      <figure><svg viewBox="0 0 260 150" role="img" aria-label="Friction press fit: tapered spigot on base wedges into collar of shade">
+        <rect class="s-shade" x="60" y="22" width="140" height="50" rx="4"/>
+        <path fill="var(--bg)" stroke="var(--part)" stroke-width="2" d="M96 72 l4 -30 h60 l4 30"/>
+        <path class="s-base" d="M100 98 l4 -50 h52 l4 50 z"/>
+        <rect class="s-base" x="50" y="98" width="160" height="32" rx="4"/>
+        <text class="s-label" x="172" y="60">taper 1–2°</text>
+      </svg></figure>
+      <div class="body">
+        <div class="top"><h3>Friction / press fit</h3><div class="tags"><span class="tag ease-easy">easy print</span><span class="tag">push</span></div></div>
+        <p>A slightly tapered spigot wedges into a collar. Simplest to model, but fit depends heavily on your printer's accuracy.</p>
+        <dl class="kv"><dt>Holds by</dt><dd>Friction</dd><dt>Params</dt><dd>1–2° taper, 0.1–0.2 mm interference, or add crush ribs (small vertical ribs that deform)</dd><dt>Watch</dt><dd>Loosens with heat cycling. Fine for table lamps, not for pendants</dd></dl>
+        <p class="say">Say: <span>"tapered press fit with 6 crush ribs"</span></p>
+      </div>
+    </article>
+
+    <!-- Gravity drop -->
+    <article class="mount" data-m="drop">
+      <figure><svg viewBox="0 0 260 150" role="img" aria-label="Gravity drop-in: shade rests on a ledge with keyed notches to stop rotation">
+        <path class="s-shade" d="M60 20 h140 l-10 60 h-120 z"/>
+        <rect class="s-base" x="66" y="80" width="128" height="10"/>
+        <rect class="s-base" x="90" y="90" width="80" height="40" rx="3"/>
+        <rect x="124" y="74" width="12" height="8" fill="var(--glow)"/>
+        <path class="s-arrow" d="M130 6 v18"/><path class="s-head" d="M130 30 l-5 -8 h10 z"/>
+        <text class="s-label" x="180" y="96">resting ledge</text>
+        <text class="s-label" x="140" y="72">key</text>
+      </svg></figure>
+      <div class="body">
+        <div class="top"><h3>Drop-in (gravity seat)</h3><div class="tags"><span class="tag ease-easy">easiest</span><span class="tag">drop</span></div></div>
+        <p>The shade simply sits on a ledge or rim. Add a key or notch so it can't spin. Great for testing designs fast.</p>
+        <dl class="kv"><dt>Holds by</dt><dd>Gravity plus locating key</dd><dt>Params</dt><dd>ledge width 3–5 mm, 0.3 mm clearance, 1–3 keys</dd><dt>Watch</dt><dd>Falls off if knocked. Never use for pendants or sconces</dd></dl>
+        <p class="say">Say: <span>"shade rests on a 4 mm ledge, 2 locating keys"</span></p>
+      </div>
+    </article>
+
+    <!-- Magnetic -->
+    <article class="mount" data-m="push hardware">
+      <figure><svg viewBox="0 0 260 150" role="img" aria-label="Magnetic: disc magnets embedded in shade and base attract across the joint">
+        <rect class="s-shade" x="50" y="26" width="160" height="50" rx="4"/>
+        <rect class="s-mag" x="72" y="66" width="20" height="8"/><rect class="s-mag" x="168" y="66" width="20" height="8"/>
+        <rect class="s-base" x="50" y="80" width="160" height="50" rx="4"/>
+        <rect class="s-mag" x="72" y="82" width="20" height="8"/><rect class="s-mag" x="168" y="82" width="20" height="8"/>
+        <path class="s-dash" d="M82 74 v8 M178 74 v8"/>
+        <text class="s-label" x="96" y="60">Ø8×3 mm magnet pockets</text>
+      </svg></figure>
+      <div class="body">
+        <div class="top"><h3>Magnetic</h3><div class="tags"><span class="tag ease-easy">easy print</span><span class="tag">push</span><span class="tag">hardware</span></div></div>
+        <p>Neodymium disc magnets glued or embedded in pockets on both parts. Satisfying "snap", instant removal.</p>
+        <dl class="kv"><dt>Holds by</dt><dd>Magnetic pull, plus a lip to stop sliding</dd><dt>Params</dt><dd>magnet Ø × thickness, pocket +0.2 mm, 3–6 magnets, alternate polarity to self-align</dd><dt>Tip</dt><dd>"Print-in magnets": pause the print and drop them in so they're fully sealed. Keep magnets away from the hot bulb (they weaken above ~80 °C)</dd></dl>
+        <p class="say">Say: <span>"4× 8×3 mm embedded magnets with pause-at-height pockets"</span></p>
+      </div>
+    </article>
+
+    <!-- Spider fitter -->
+    <article class="mount" data-m="drop hardware">
+      <figure><svg viewBox="0 0 260 150" role="img" aria-label="Spider fitter: harp rises from base, shade spokes rest on harp top, finial screws on">
+        <path class="s-shade" d="M80 30 h100 l24 80 h-148 z"/>
+        <path d="M130 44 L88 70 M130 44 L172 70" stroke="var(--part)" stroke-width="2"/>
+        <circle class="s-hw" cx="130" cy="36" r="6"/>
+        <path d="M130 44 v20 M110 110 q-6 -40 20 -46 q26 6 20 46" fill="none" stroke="var(--ink)" stroke-width="2"/>
+        <ellipse class="s-bulb" cx="130" cy="90" rx="12" ry="16"/>
+        <rect class="s-base" x="96" y="110" width="68" height="26" rx="3"/>
+        <text class="s-label" x="140" y="34">finial</text>
+        <text class="s-label" x="170" y="90">harp</text>
+      </svg></figure>
+      <div class="body">
+        <div class="top"><h3>Spider fitter + harp</h3><div class="tags"><span class="tag ease-easy">easy print</span><span class="tag">drop</span><span class="tag">hardware</span></div></div>
+        <p>The traditional lamp method. A wire harp clips under the socket, the shade's spokes ("spider") sit on top, and a decorative finial screws down to hold it.</p>
+        <dl class="kv"><dt>Holds by</dt><dd>Finial thread on harp stud</dd><dt>Params</dt><dd>harp height (sets shade height), washer hole ~Ø10.5 mm for ¼-27 harp stud</dd><dt>Why</dt><dd>Lets you use any store-bought harp and lets the shade sit well above the bulb</dd></dl>
+        <p class="say">Say: <span>"spider fitter hub for a 7-inch harp, 3 spokes"</span></p>
+      </div>
+    </article>
+
+    <!-- Uno fitter -->
+    <article class="mount" data-m="drop hardware">
+      <figure><svg viewBox="0 0 260 150" role="img" aria-label="Uno or washer fitter: shade's center ring clamps between socket shell and threaded shade ring">
+        <path class="s-shade" d="M60 40 h140 l-20 70 h-100 z"/>
+        <path d="M84 70 h36 M140 70 h36" stroke="var(--part)" stroke-width="2"/>
+        <rect class="s-hw" x="114" y="56" width="32" height="36" rx="3"/>
+        <rect class="s-hw" x="108" y="64" width="44" height="6"/>
+        <ellipse class="s-bulb" cx="130" cy="40" rx="16" ry="20"/>
+        <rect class="s-base" x="96" y="110" width="68" height="26" rx="3"/>
+        <text class="s-label" x="160" y="64">shade ring</text>
+        <text class="s-label" x="10" y="80">fitter ring</text>
+      </svg></figure>
+      <div class="body">
+        <div class="top"><h3>Uno / washer fitter (socket ring)</h3><div class="tags"><span class="tag ease-easy">easy print</span><span class="tag">drop</span><span class="tag">hardware</span></div></div>
+        <p>The shade has a center ring that drops over the socket and is clamped by the threaded shade ring that comes with many sockets. Standard on pendants and small table lamps.</p>
+        <dl class="kv"><dt>Holds by</dt><dd>Clamped between socket and threaded ring</dd><dt>Params</dt><dd>ring hole sized to your socket's threaded sleeve (often ~Ø30–40 mm, measure), 3–4 spokes</dd><dt>Best for</dt><dd>Pendants, where the shade must not let go</dd></dl>
+        <p class="say">Say: <span>"uno fitter ring, Ø__ mm hole for E26 shade ring, 4 spokes"</span></p>
+      </div>
+    </article>
+
+    <!-- Clip-on bulb -->
+    <article class="mount" data-m="push hardware">
+      <figure><svg viewBox="0 0 260 150" role="img" aria-label="Bulb clip: wire clip grips the bulb glass, shade hangs from the bulb">
+        <path class="s-shade" d="M70 26 h120 l20 70 h-160 z"/>
+        <ellipse class="s-bulb" cx="130" cy="88" rx="22" ry="28"/>
+        <path d="M130 30 v34 M116 66 q14 -10 28 0" fill="none" stroke="var(--ink)" stroke-width="2"/>
+        <rect class="s-hw" x="120" y="112" width="20" height="18"/>
+        <text class="s-label" x="150" y="52">clip grips bulb</text>
+      </svg></figure>
+      <div class="body">
+        <div class="top"><h3>Bulb clip</h3><div class="tags"><span class="tag ease-easy">easy print</span><span class="tag">push</span><span class="tag">hardware</span></div></div>
+        <p>A wire clip squeezes onto the bulb and the small shade hangs from it. Used on candelabra and chandelier mini shades.</p>
+        <dl class="kv"><dt>Holds by</dt><dd>Spring clip on bulb glass</dd><dt>Params</dt><dd>bulb shape (A19, B10 candle), clip boss in shade top</dd><dt>Watch</dt><dd>Shade sits close to the bulb; LED only</dd></dl>
+        <p class="say">Say: <span>"clip-on mini shade for B10 candle bulb"</span></p>
+      </div>
+    </article>
+
+    <!-- Dovetail slide -->
+    <article class="mount" data-m="slide">
+      <figure><svg viewBox="0 0 260 150" role="img" aria-label="Dovetail slide: wedge-shaped rail on the shade slides into a matching slot on the wall plate">
+        <rect class="s-base" x="30" y="20" width="60" height="110" rx="3"/>
+        <path class="s-shade" d="M92 40 h20 l14 -14 l0 98 l-14 -14 h-20 z"/>
+        <path class="s-shade" d="M126 26 q90 10 100 50 q-10 40 -100 48 z"/>
+        <path d="M76 52 l12 4 v38 l-12 4 z" class="s-shade"/>
+        <path class="s-arrow" d="M240 50 v40"/><path class="s-head" d="M240 96 l-5 -8 h10 z"/>
+        <text class="s-label" x="20" y="146">wall plate</text>
+        <text class="s-label" x="150" y="146">slide down to lock</text>
+      </svg></figure>
+      <div class="body">
+        <div class="top"><h3>Dovetail / French cleat slide</h3><div class="tags"><span class="tag ease-med">medium</span><span class="tag">slide</span></div></div>
+        <p>A wedge-shaped rail slides into a matching slot and gravity pulls it tight. The go-to for wall sconces: screw the plate to the wall, slide the shade on.</p>
+        <dl class="kv"><dt>Holds by</dt><dd>Wedge geometry plus gravity</dd><dt>Params</dt><dd>dovetail angle 60–75°, rail length, 0.3 mm clearance, end stop</dd><dt>Tip</dt><dd>Print the rail lying flat so its angled faces are strong</dd></dl>
+        <p class="say">Say: <span>"sconce back plate with 70° dovetail slide-on shade, bottom stop"</span></p>
+      </div>
+    </article>
+
+    <!-- Hook / keyhole -->
+    <article class="mount" data-m="drop slide">
+      <figure><svg viewBox="0 0 260 150" role="img" aria-label="Hook and eye: hooks on the shade hang over pegs or a rim on the base">
+        <rect class="s-base" x="40" y="70" width="180" height="60" rx="4"/>
+        <rect class="s-base" x="56" y="58" width="12" height="14"/><rect class="s-base" x="192" y="58" width="12" height="14"/>
+        <path class="s-shade" d="M50 20 h160 v30 h-10 v14 q0 6 -8 6 h-4 v-10 h4 v-10 h-124 v10 h4 v10 h-4 q-8 0 -8 -6 v-14 h-10 z"/>
+        <text class="s-label" x="96" y="44">J-hooks over pegs</text>
+      </svg></figure>
+      <div class="body">
+        <div class="top"><h3>Hook-and-peg / keyhole</h3><div class="tags"><span class="tag ease-easy">easy print</span><span class="tag">drop</span><span class="tag">slide</span></div></div>
+        <p>J-shaped hooks on the shade hang over pegs, a rim, or into keyhole slots. Drop and shift sideways to lock. Good for lanterns and big segmented shades.</p>
+        <dl class="kv"><dt>Holds by</dt><dd>Hook resting on peg, gravity</dd><dt>Params</dt><dd>hook gap = peg Ø + 0.4 mm, hook wall ≥ 2.4 mm</dd><dt>Variant</dt><dd>Keyhole: big hole to insert a mushroom-head peg, slide into the narrow slot</dd></dl>
+        <p class="say">Say: <span>"3 J-hooks hanging on Ø5 mm pegs around the base rim"</span></p>
+      </div>
+    </article>
+
+    <!-- Quarter-turn cam -->
+    <article class="mount" data-m="twist">
+      <figure><svg viewBox="0 0 260 150" role="img" aria-label="Quarter-turn cam with detent: ramped lugs rise as the shade turns, then click into a notch">
+        <rect class="s-shade" x="40" y="20" width="180" height="56" rx="4"/>
+        <path d="M60 76 l40 -14 h40 v14" class="s-shade"/>
+        <path class="s-base" d="M40 92 h60 l40 -14 h20 l-4 6 h8 v8 h56 v40 h-180 z"/>
+        <path class="s-arrow" d="M70 10 h110"/><path class="s-head" d="M186 10 l-8 -5 v10 z"/>
+        <text class="s-label" x="146" y="106">detent notch</text>
+        <text class="s-label" x="44" y="106">ramp</text>
+      </svg></figure>
+      <div class="body">
+        <div class="top"><h3>Quarter-turn cam lock</h3><div class="tags"><span class="tag ease-med">medium</span><span class="tag">twist</span></div></div>
+        <p>Like a bayonet, but the lug rides up a ramp that pulls the two parts together as you turn, ending in a click. Tighter, no wobble.</p>
+        <dl class="kv"><dt>Holds by</dt><dd>Wedge preload plus detent</dd><dt>Params</dt><dd>ramp rise 0.5–1 mm over 60–90°, detent bump 0.3 mm</dd><dt>Best for</dt><dd>Mushroom caps and any shade that must not rattle</dd></dl>
+        <p class="say">Say: <span>"quarter-turn cam lock with ramped lugs and detent"</span></p>
+      </div>
+    </article>
+
+    <!-- Set screw sleeve -->
+    <article class="mount" data-m="slide hardware">
+      <figure><svg viewBox="0 0 260 150" role="img" aria-label="Sleeve with set screw: shade sleeve slides over a pipe and a thumb screw clamps it">
+        <rect class="s-base" x="122" y="10" width="16" height="130"/>
+        <rect class="s-shade" x="100" y="40" width="60" height="44" rx="3"/>
+        <rect x="118" y="40" width="24" height="44" fill="var(--bg)"/>
+        <rect class="s-base" x="122" y="40" width="16" height="44"/>
+        <rect class="s-hw" x="160" y="56" width="34" height="10"/><rect class="s-hw" x="194" y="50" width="10" height="22" rx="2"/>
+        <rect class="s-hw" x="148" y="58" width="12" height="6" fill="var(--glow)"/>
+        <text class="s-label" x="170" y="88">thumb screw +</text><text class="s-label" x="170" y="100">heat-set insert</text>
+      </svg></figure>
+      <div class="body">
+        <div class="top"><h3>Sleeve + set screw</h3><div class="tags"><span class="tag ease-easy">easy print</span><span class="tag">slide</span><span class="tag">hardware</span></div></div>
+        <p>A sleeve slides along a pipe or stem and a thumb screw clamps it. Lets you adjust shade height. Common on floor and desk lamps.</p>
+        <dl class="kv"><dt>Holds by</dt><dd>Screw clamping force</dd><dt>Params</dt><dd>bore = pipe OD + 0.3 mm, M4 heat-set insert, knurled thumb screw</dd><dt>Tip</dt><dd>Heat-set brass inserts give printed parts real metal threads</dd></dl>
+        <p class="say">Say: <span>"sliding sleeve on Ø10 mm lamp pipe, M4 heat-set insert, thumb screw"</span></p>
+      </div>
+    </article>
+
+    <!-- Pendant canopy / cord grip -->
+    <article class="mount" data-m="push hardware">
+      <figure><svg viewBox="0 0 260 150" role="img" aria-label="Pendant: cord passes through a cord grip in the shade top, socket clamped inside">
+        <rect class="s-base" x="90" y="6" width="80" height="16" rx="3"/>
+        <path d="M130 22 v34" stroke="var(--ink)" stroke-width="2"/>
+        <path class="s-shade" d="M110 56 h40 l60 66 h-160 z"/>
+        <rect class="s-hw" x="120" y="52" width="20" height="14"/>
+        <rect class="s-hw" x="116" y="66" width="28" height="24" rx="3"/>
+        <ellipse class="s-bulb" cx="130" cy="106" rx="14" ry="16"/>
+        <text class="s-label" x="174" y="18">ceiling canopy</text>
+        <text class="s-label" x="150" y="62">cord grip</text>
+      </svg></figure>
+      <div class="body">
+        <div class="top"><h3>Pendant cord grip</h3><div class="tags"><span class="tag ease-med">medium</span><span class="tag">hardware</span></div></div>
+        <p>For hanging lamps. The cord, not the plastic, carries the weight through a strain relief grip, and the shade is clamped by an uno ring or socket collar.</p>
+        <dl class="kv"><dt>Holds by</dt><dd>Strain-relief grip plus socket ring</dd><dt>Params</dt><dd>grip thread (often 1/8 IPS), cord OD, shade weight</dd><dt>Rule</dt><dd>Never let a printed snap be the only thing holding a pendant over someone's head</dd></dl>
+        <p class="say">Say: <span>"pendant shade, top hole for 1/8 IPS cord grip, uno ring clamp"</span></p>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+
+<!-- CHOOSING -->
+<section id="choose" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ choosing_a_mount.doc</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+  <div class="sec-head"><span class="eyebrow">How to think about it</span><h2>Choosing a mount</h2>
+  <p class="note">Start from the lamp form, then pick by what you care about most.</p></div>
+  <div class="matrix-wrap"><table>
+    <thead><tr><th>Lamp form</th><th>Load on joint</th><th>Good picks</th><th>Avoid</th></tr></thead>
+    <tbody>
+      <tr><td>Table / bedside</td><td>Compression</td><td>Bayonet, drop-in with key, magnetic, spider fitter</td><td>Nothing, really. Choose for looks</td></tr>
+      <tr><td>Mushroom</td><td>Compression + tipping</td><td>Quarter-turn cam, threaded, bayonet with detent</td><td>Plain drop-in</td></tr>
+      <tr><td>Pendant</td><td>Tension</td><td>Uno fitter, cord grip, threaded collar</td><td>Friction fit, magnets, drop-in</td></tr>
+      <tr><td>Wall sconce</td><td>Shear</td><td>Dovetail slide, keyhole, hook-and-peg</td><td>Friction fit</td></tr>
+      <tr><td>Floor lamp</td><td>Compression + leverage</td><td>Spider fitter + harp, sleeve + set screw</td><td>Weak snaps on big shades</td></tr>
+      <tr><td>Stackable / modular</td><td>Compression per tier</td><td>Drop-in with keys, bayonet, magnets</td><td>Threads (alignment of pattern drifts)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="terms">
+    <div class="term"><dt>Need no tools, no extra parts?</dt><dd>Bayonet, snap hooks, drop-in, dovetail.</dd></div>
+    <div class="term"><dt>Want to swap shades often?</dt><dd>Magnetic, bayonet, removable snap (45° face).</dd></div>
+    <div class="term"><dt>Want the joint invisible?</dt><dd>Threaded collar, annular snap, internal bayonet.</dd></div>
+    <div class="term"><dt>Pattern must line up after closing?</dt><dd>Bayonet or keyed drop-in. They stop at a fixed angle; threads don't.</dd></div>
+  </div>
+</div></section>
+
+<!-- ELECTRICAL -->
+<section id="electrical" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ socket_stuff.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+  <div class="sec-head"><span class="eyebrow">5 · The part that must fit exactly</span><h2>Socket &amp; electrical terms</h2></div>
+  <dl class="terms">
+    <div class="term"><dt>E26 / E27</dt><dd>Standard medium screw base. E26 in North America, E27 in Europe. 26 or 27 mm thread diameter.</dd></div>
+    <div class="term"><dt>E12 / E14</dt><dd>Candelabra base. E12 in North America, E14 in Europe.</dd></div>
+    <div class="term"><dt>GU10 / G9</dt><dd>Twist-lock and pin bases for small spot or capsule bulbs.</dd></div>
+    <div class="term"><dt>A19, G25, ST64, B10</dt><dd>Bulb shapes: standard, globe, Edison-style, candle. Sets the shade's inner clearance.</dd></div>
+    <div class="term"><dt>keyless socket</dt><dd>Socket with no switch on it. Use with an inline cord switch.</dd></div>
+    <div class="term"><dt>socket shell / cap</dt><dd>Outer body of the socket. The cap's threaded hole mounts onto the lamp pipe.</dd></div>
+    <div class="term"><dt>shade ring / socket ring</dt><dd>Threaded ring on the socket's outer sleeve that clamps a shade or uno fitter.</dd></div>
+    <div class="term"><dt>lamp pipe / threaded nipple</dt><dd>Hollow threaded tube, usually 1/8 IPS (~10.3 mm OD), that connects socket to base. Print a hole for it, don't print it.</dd></div>
+    <div class="term"><dt>cord kit / pendant kit</dt><dd>Pre-wired socket, cord, plug and switch. Buy UL-listed.</dd></div>
+    <div class="term"><dt>strain relief</dt><dd>Knot, grip or clamp so pulling the cord doesn't pull the wires off the socket.</dd></div>
+    <div class="term"><dt>harp / finial</dt><dd>Wire frame above the bulb and the decorative screw that holds a spider-fitter shade.</dd></div>
+    <div class="term"><dt>cord channel / wire chase</dt><dd>Internal path for the cord through the base. Size ≥ cord OD + 1 mm with smooth bends.</dd></div>
+    <div class="term"><dt>felt pad / weight pocket</dt><dd>Recess in the base bottom for felt or steel washers so tall lamps don't tip.</dd></div>
+  </dl>
+  <div class="warn"><strong>Fixed rules for the agent</strong>
+    <p>Measure your actual socket with calipers and hard-code those numbers. Use LED bulbs only. Keep ≥25 mm between bulb and shade, with an opening at the top for heat. Print the socket holder in PETG or ASA, not PLA. Never print the electrical socket itself.</p></div>
+</div></section>
+
+<!-- PRINT -->
+<section id="print" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ print_terms.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+  <div class="sec-head"><span class="eyebrow">6 · Making it printable</span><h2>Print terms to put in the prompt</h2></div>
+  <dl class="terms">
+    <div class="term"><dt>clearance / tolerance</dt><dd>Gap between mating parts. 0.2 mm tight, 0.3–0.4 mm normal, 0.5 mm loose.</dd></div>
+    <div class="term"><dt>wall thickness</dt><dd>Use multiples of nozzle width: 0.8, 1.2, 1.6 mm for a 0.4 mm nozzle.</dd></div>
+    <div class="term"><dt>vase mode / spiralize</dt><dd>One continuous wall, no seams, very fast. Shade only: no holes or internal parts.</dd></div>
+    <div class="term"><dt>overhang ≤ 45°</dt><dd>Anything flatter needs supports. Ask for "support-free geometry".</dd></div>
+    <div class="term"><dt>chamfer vs. fillet</dt><dd>Use chamfers on bottom edges (print cleanly), fillets on top edges.</dd></div>
+    <div class="term"><dt>print orientation</dt><dd>Which face is on the bed. Shades usually print upside down (wide rim on the bed).</dd></div>
+    <div class="term"><dt>split for printing</dt><dd>Divide large shades into segments with alignment pins or dovetails.</dd></div>
+    <div class="term"><dt>build volume</dt><dd>Your printer's max size, e.g. 256×256×256 mm. Tell the agent so it splits parts if needed.</dd></div>
+    <div class="term"><dt>first-layer elephant's foot</dt><dd>Squished first layer makes parts bigger at the bottom. Add a 0.4 mm chamfer on mating edges.</dd></div>
+    <div class="term"><dt>test coupon / fit test</dt><dd>Small print of only the joint to tune clearance before the full lamp.</dd></div>
+    <div class="term"><dt>PLA / PETG / ASA</dt><dd>PLA: easy, softens ~60 °C. PETG: tougher, more flexible, ~80 °C. ASA: heat and UV resistant.</dd></div>
+    <div class="term"><dt>natural / translucent filament</dt><dd>Unpigmented filament that glows. White PLA diffuses; black blocks light completely.</dd></div>
+    <div class="term"><dt>heat-set insert</dt><dd>Brass threaded insert melted into a printed hole. Use wherever a screw goes.</dd></div>
+    <div class="term"><dt>watertight / manifold</dt><dd>Mesh with no holes or flipped faces. Required for a clean slice.</dd></div>
+  </dl>
+</div></section>
+
+<!-- EXAMPLES -->
+<section id="examples" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ example_prompts.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+  <div class="sec-head"><span class="eyebrow">Put it together</span><h2>Example prompts</h2></div>
+  <div class="examples">
+    <div class="ex"><span>200 mm tall bedside table lamp, hourglass silhouette, 24 twisted ribs with 120° twist, 3-lug bayonet mount with 30° twist and detent, E26 keyless socket on 1/8 IPS nipple, 1.2 mm walls, natural PETG, support-free.</span><button type="button">Copy</button></div>
+    <div class="ex"><span>Mushroom lamp, 160 mm tall, Ø180 mm dome cap with voronoi cut-through (40 cells, 2.4 mm struts) plus plain inner diffuser, quarter-turn cam lock to a slim fluted stem, E12 socket, ASA, weight pocket in base for 3 steel washers.</span><button type="button">Copy</button></div>
+    <div class="ex"><span>Pendant shade, Ø250 mm bell, 8 stacked rings with 6 mm gaps, uno fitter ring for an E26 shade ring, top opening for 1/8 IPS cord grip, split into 2 parts with alignment pins to fit a 220 mm bed.</span><button type="button">Copy</button></div>
+    <div class="ex"><span>Wall sconce, 220 mm tall half-cone shade with 70° dovetail slide onto a back plate with 2 keyhole screw slots, perforated gradient pattern (dense at bottom), GU10 socket, PETG, 0.3 mm slide clearance.</span><button type="button">Copy</button></div>
+    <div class="ex"><span>Modular lantern, 3 stackable hexagonal tiers each 80 mm tall, lithophane panels on each face, keyed drop-in joints between tiers, magnetic lid (4× 6×2 mm magnets), battery LED puck in base.</span><button type="button">Copy</button></div>
+  </div>
+</div></section>
+<footer class="foot"><span>made with ♡ and a 0.4 mm nozzle</span><span class="pix">best viewed at any resolution ✦ 2026</span></footer>
+</div>
+
+<script>
+(function(){
+  const opts={
+    'b-form':['bedside table lamp','table lamp','mushroom lamp','pendant','wall sconce','floor lamp shade','lantern','stackable modular lamp'],
+    'b-sil':['hourglass','drum','empire','bell','dome','globe','cone','vase','lofted circle-to-hexagon'],
+    'b-pat':['twisted rib (24 ribs, 120° twist)','vertical fluted (32 flutes)','voronoi cut-through','gyroid lattice','faceted low-poly','sinusoidal wave','stacked rings','louvered slats','perforated gradient','smooth diffuser'],
+    'b-mount':['3-lug bayonet, 30° twist, detent click','quarter-turn cam lock','screw-on collar, 4 mm pitch thread','4 cantilever snap hooks, removable 45° face','annular snap ring with relief slots','tapered press fit with crush ribs','drop-in seat with 2 locating keys','magnetic, 4× 8×3 mm embedded magnets','spider fitter for 7-inch harp','uno fitter ring for socket shade ring','70° dovetail slide-on','J-hooks over pegs','sleeve with M4 heat-set set screw'],
+    'b-sock':['E26 keyless socket on 1/8 IPS nipple','E12 candelabra socket','E27 socket','GU10 socket','battery LED puck'],
+    'b-mat':['natural PETG','white PLA (shade) + PETG (base)','ASA','translucent PETG']
+  };
+  for(const id in opts){const s=document.getElementById(id);opts[id].forEach(v=>{const o=document.createElement('option');o.textContent=v;s.appendChild(o)});}
+  const out=document.getElementById('b-out');
+  function build(){
+    const g=id=>document.getElementById(id).value;
+    const h=Math.max(60,Math.min(600,parseInt(g('b-size'))||200));
+    out.textContent=`${h} mm tall ${g('b-form')}, ${g('b-sil')} silhouette, ${g('b-pat')} surface, ${g('b-mount')} between shade and base, ${g('b-sock')}, ${g('b-mat')}, 1.2 mm walls, 0.3–0.4 mm clearances, ≥25 mm bulb clearance, support-free, export STL per part.`;
+  }
+  document.querySelectorAll('.builder select,.builder input').forEach(e=>e.addEventListener('input',build));
+  build();
+  function copy(text,btn){
+    const done=()=>{const t=btn.textContent;btn.textContent='Copied';setTimeout(()=>btn.textContent=t,1400)};
+    const fallback=(el)=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected, press Ctrl+C';setTimeout(()=>btn.textContent='Copy',2000)};
+    try{navigator.clipboard.writeText(text).then(done).catch(()=>fallback(btn.previousElementSibling))}catch(e){fallback(btn.previousElementSibling)}
+  }
+  document.getElementById('b-copy').addEventListener('click',e=>copy(out.textContent,e.currentTarget));
+  document.querySelectorAll('.ex button').forEach(b=>b.addEventListener('click',()=>copy(b.previousElementSibling.textContent,b)));
+  const chips=document.querySelectorAll('.chip');
+  chips.forEach(c=>c.addEventListener('click',()=>{
+    chips.forEach(x=>x.setAttribute('aria-pressed',x===c?'true':'false'));
+    const f=c.dataset.f;
+    document.querySelectorAll('.mount').forEach(m=>{m.hidden=!(f==='all'||m.dataset.m.split(' ').includes(f))});
+  }));
+})();
+</script>
+<script src="sparkle.js"></script>
+</body>
+</html>
