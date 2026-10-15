@@ -5,24 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Printable Lamp Lexicon</title>
 <meta name="description" content="Prompt vocabulary for 3D-printed lamps: forms, silhouettes, patterns, mount types, sockets and print terms.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2l3.5 9.5L29 15l-9.5 3.5L16 28l-3.5-9.5L3 15l9.5-3.5z' fill='%23c9a7ff'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M20 3A13 13 0 1 0 29 22A11 11 0 1 1 20 3Z' fill='%23e3ad3a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&family=VT323&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&family=Quicksand:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
+<script>try{const t=localStorage.getItem('lamp-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
+<svg class="defs" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="g-lit" x1="0" x2="1"><stop offset="0" style="stop-color:var(--lit-2)"/><stop offset=".5" style="stop-color:var(--lit-1)"/><stop offset="1" style="stop-color:var(--lit-2)"/></linearGradient>
+  <linearGradient id="g-litw" x1="0" x2="1"><stop offset="0" style="stop-color:var(--litw-2)"/><stop offset=".5" style="stop-color:var(--litw-1)"/><stop offset="1" style="stop-color:var(--litw-2)"/></linearGradient>
+  <linearGradient id="g-litc" x1="0" x2="1"><stop offset="0" style="stop-color:var(--litc-2)"/><stop offset=".5" style="stop-color:var(--litc-1)"/><stop offset="1" style="stop-color:var(--litc-2)"/></linearGradient>
+  <linearGradient id="g-asa" x1="0" x2="1"><stop offset="0" style="stop-color:var(--asa-2)"/><stop offset=".5" style="stop-color:var(--asa-1)"/><stop offset="1" style="stop-color:var(--asa-2)"/></linearGradient>
+  <radialGradient id="g-halo"><stop offset="0" style="stop-color:var(--halo);stop-opacity:.7"/><stop offset="1" style="stop-color:var(--halo);stop-opacity:0"/></radialGradient>
+  <radialGradient id="g-bulb" cx=".42" cy=".38"><stop offset="0" stop-color="#fffdf2"/><stop offset="1" style="stop-color:var(--halo)"/></radialGradient>
+  <linearGradient id="g-beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--halo);stop-opacity:.55"/><stop offset="1" style="stop-color:var(--halo);stop-opacity:0"/></linearGradient>
+  <linearGradient id="g-beam-up" x1="0" y1="1" x2="0" y2="0"><stop offset="0" style="stop-color:var(--halo);stop-opacity:.55"/><stop offset="1" style="stop-color:var(--halo);stop-opacity:0"/></linearGradient>
+  <linearGradient id="g-gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0b8"/><stop offset=".5" stop-color="#f1c35a"/><stop offset="1" stop-color="#c98f2c"/></linearGradient>
+  <mask id="m-crescent"><rect width="200" height="200" fill="#fff"/><circle cx="128" cy="76" r="60" fill="#000"/></mask>
+</defs></svg>
 <canvas id="sky" aria-hidden="true"></canvas>
 <div class="wrap">
 <header class="hero">
-  <div class="hero-deco" aria-hidden="true"><span class="star s1">✦</span><span class="star s2">✧</span><span class="star s3">⋆</span><span class="heart">♡</span></div>
-  <span class="eyebrow">♡ 3D-printed lighting · prompt vocabulary ♡</span>
-  <h1>Printable Lamp Lexicon</h1>
-  <p class="lede">The words that turn a vague idea into a printable, wire-able lamp. Every good lamp prompt answers the same six questions, in roughly this order:</p>
-  <div class="formula"><b>[size]</b> + <b>[lamp form]</b> + <b>[shade silhouette]</b> + <b>[surface pattern]</b> + <i>[mount type]</i> + <b>[socket / bulb]</b> + <b>[print constraints]</b></div>
+  <div class="hero-text">
+    <span class="eyebrow">☾ 3D-printed lighting · prompt vocabulary ☾</span>
+    <h1>Printable Lamp Lexicon</h1>
+    <p class="lede">The words that turn a vague idea into a printable, wire-able lamp, each with a little picture so you can see it before you prompt it. Every good lamp prompt answers the same questions, in roughly this order:</p>
+    <div class="formula"><b>[size]</b> + <b>[lamp form]</b> + <b>[shade silhouette]</b> + <b>[surface pattern]</b> + <i>[mount type]</i> + <b>[socket / bulb]</b> + <b>[print constraints]</b></div>
+  </div>
+  <svg class="moon" viewBox="0 0 200 200" aria-hidden="true">
+    <circle cx="100" cy="100" r="98" fill="url(#g-halo)"/>
+    <circle cx="100" cy="100" r="70" fill="url(#g-gold)" mask="url(#m-crescent)"/>
+    <path class="spark" d="M158 24Q158 40 174 40Q158 40 158 56Q158 40 142 40Q158 40 158 24Z"/>
+    <path class="spark" d="M40 138Q40 150 52 150Q40 150 40 162Q40 150 28 150Q40 150 40 138Z"/>
+    <path class="spark" d="M172 140Q172 150 182 150Q172 150 172 160Q172 150 162 150Q172 150 172 140Z"/>
+    <path class="heart" d="M146 104C134 95 134 84 141 84C144 84 146 87 146 89C146 87 148 84 151 84C158 84 158 95 146 104Z"/>
+  </svg>
 </header>
 
-<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>✧ print slow ✧ measure your socket ✧ LED bulbs only ✧ 0.4 mm clearance is your friend ✧ glow softly ✧ vase mode forever ✧ </span><span>✧ print slow ✧ measure your socket ✧ LED bulbs only ✧ 0.4 mm clearance is your friend ✧ glow softly ✧ vase mode forever ✧ </span></div></div>
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>☾ print slow <b>✦</b> measure your socket <b>✦</b> LED bulbs only <b>✦</b> 0.4 mm clearance is your friend <b>✦</b> glow softly by moonlight <b>✦</b> vase mode forever <b>✦</b> </span><span>☾ print slow <b>✦</b> measure your socket <b>✦</b> LED bulbs only <b>✦</b> 0.4 mm clearance is your friend <b>✦</b> glow softly by moonlight <b>✦</b> vase mode forever <b>✦</b> </span></div></div>
 <nav class="toc" aria-label="Sections">
   <a href="#builder">Prompt builder</a>
   <a href="#forms">Lamp forms</a>
@@ -33,10 +55,11 @@
   <a href="#electrical">Socket &amp; electrical</a>
   <a href="#print">Print terms</a>
   <a href="#examples">Example prompts</a>
+  <button class="theme-btn" id="theme" type="button" aria-label="Switch theme">☾</button>
 </nav>
 
 <!-- BUILDER -->
-<section id="builder" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ prompt_builder.exe</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+<section id="builder" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">☾ prompt_builder.exe</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
   <div class="sec-head"><span class="eyebrow">Try it</span><h2>Prompt builder</h2>
   <p class="note">Pick from the lexicon below and copy the result into your CAD agent.</p></div>
   <div class="builder">
@@ -49,12 +72,15 @@
       <label for="b-sock">Socket<select id="b-sock"></select></label>
       <label for="b-mat">Material<select id="b-mat"></select></label>
     </div>
-    <div class="out"><output id="b-out" aria-live="polite"></output><button id="b-copy" type="button">Copy prompt</button></div>
+    <div class="build-main">
+      <figure class="build-pv"><div class="pv" id="b-pv"></div><figcaption>live preview · not to scale</figcaption></figure>
+      <div class="out"><output id="b-out" aria-live="polite"></output><button id="b-copy" type="button">Copy prompt</button></div>
+    </div>
   </div>
 </div></section>
 
 <!-- FORMS -->
-<section id="forms" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ lamp_forms.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+<section id="forms" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">☾ lamp_forms.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
   <div class="sec-head"><span class="eyebrow">1 · What kind of lamp</span><h2>Lamp forms</h2>
   <p class="note">The form decides which way gravity pulls on the joint. That matters more than anything else when choosing a mount.</p></div>
   <dl class="terms">
@@ -74,7 +100,7 @@
 </div></section>
 
 <!-- SILHOUETTES -->
-<section id="silhouettes" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ silhouettes.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+<section id="silhouettes" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">☾ silhouettes.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
   <div class="sec-head"><span class="eyebrow">2 · Overall shape</span><h2>Shade silhouettes</h2></div>
   <dl class="terms">
     <div class="term"><dt>drum / cylinder</dt><dd>Straight vertical sides, same top and bottom diameter.</dd></div>
@@ -93,7 +119,7 @@
 </div></section>
 
 <!-- PATTERNS -->
-<section id="patterns" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ surface_patterns.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+<section id="patterns" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">☾ surface_patterns.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
   <div class="sec-head"><span class="eyebrow">3 · Surface treatment</span><h2>Surface patterns</h2>
   <p class="note">Add a number to any of these and you get a different lamp: rib count, twist angle, cell size, amplitude.</p></div>
   <div class="group-title">Linear and rotational</div>
@@ -133,7 +159,7 @@
 </div></section>
 
 <!-- MOUNTS -->
-<section id="mounts" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ mount_types.exe</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+<section id="mounts" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">☾ mount_types.exe</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
   <div class="sec-head"><span class="eyebrow">4 · How the shade meets the base</span><h2>Mount types</h2>
   <p class="note">Think of every mount as an answer to three questions: <strong>what motion attaches it</strong> (drop, push, twist, slide), <strong>what keeps it there</strong> (gravity, friction, a hook, a magnet), and <strong>what parts are not printed</strong> (magnets, screws, a store-bought fitter). Filter by the motion:</p></div>
   <div class="filters" role="group" aria-label="Filter mounts by motion">
@@ -432,7 +458,7 @@
 </div></section>
 
 <!-- CHOOSING -->
-<section id="choose" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ choosing_a_mount.doc</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+<section id="choose" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">☾ choosing_a_mount.doc</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
   <div class="sec-head"><span class="eyebrow">How to think about it</span><h2>Choosing a mount</h2>
   <p class="note">Start from the lamp form, then pick by what you care about most.</p></div>
   <div class="matrix-wrap"><table>
@@ -455,7 +481,7 @@
 </div></section>
 
 <!-- ELECTRICAL -->
-<section id="electrical" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ socket_stuff.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+<section id="electrical" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">☾ socket_stuff.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
   <div class="sec-head"><span class="eyebrow">5 · The part that must fit exactly</span><h2>Socket &amp; electrical terms</h2></div>
   <dl class="terms">
     <div class="term"><dt>E26 / E27</dt><dd>Standard medium screw base. E26 in North America, E27 in Europe. 26 or 27 mm thread diameter.</dd></div>
@@ -477,7 +503,7 @@
 </div></section>
 
 <!-- PRINT -->
-<section id="print" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ print_terms.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+<section id="print" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">☾ print_terms.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
   <div class="sec-head"><span class="eyebrow">6 · Making it printable</span><h2>Print terms to put in the prompt</h2></div>
   <dl class="terms">
     <div class="term"><dt>clearance / tolerance</dt><dd>Gap between mating parts. 0.2 mm tight, 0.3–0.4 mm normal, 0.5 mm loose.</dd></div>
@@ -498,7 +524,7 @@
 </div></section>
 
 <!-- EXAMPLES -->
-<section id="examples" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">✦ example_prompts.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
+<section id="examples" class="win"><div class="titlebar" aria-hidden="true"><span class="tb-name">☾ example_prompts.txt</span><span class="tb-btns"><i></i><i></i><i></i></span></div><div class="win-body">
   <div class="sec-head"><span class="eyebrow">Put it together</span><h2>Example prompts</h2></div>
   <div class="examples">
     <div class="ex"><span>200 mm tall bedside table lamp, hourglass silhouette, 24 twisted ribs with 120° twist, 3-lug bayonet mount with 30° twist and detent, E26 keyless socket on 1/8 IPS nipple, 1.2 mm walls, natural PETG, support-free.</span><button type="button">Copy</button></div>
@@ -508,9 +534,10 @@
     <div class="ex"><span>Modular lantern, 3 stackable hexagonal tiers each 80 mm tall, lithophane panels on each face, keyed drop-in joints between tiers, magnetic lid (4× 6×2 mm magnets), battery LED puck in base.</span><button type="button">Copy</button></div>
   </div>
 </div></section>
-<footer class="foot"><span>made with ♡ and a 0.4 mm nozzle</span><span class="pix">best viewed at any resolution ✦ 2026</span></footer>
+<footer class="foot"><span>made with ♡, moonlight and a 0.4 mm nozzle</span><span class="small">☾ ✦ best viewed after dark ✦ 2026</span></footer>
 </div>
 
+<script src="previews.js"></script>
 <script>
 (function(){
   const opts={
@@ -521,17 +548,22 @@
     'b-sock':['E26 keyless socket on 1/8 IPS nipple','E12 candelabra socket','E27 socket','GU10 socket','battery LED puck'],
     'b-mat':['natural PETG','white PLA (shade) + PETG (base)','ASA','translucent PETG']
   };
+  // Builder choices -> preview keys in previews.js
+  const FORM={'bedside table lamp':'bedside','table lamp':'table','mushroom lamp':'mushroom','pendant':'pendant','wall sconce':'sconce','floor lamp shade':'floor','lantern':'lantern','stackable modular lamp':'modular'};
+  const PAT={twisted:'twisted',vertical:'ribbed',voronoi:'voronoi',gyroid:'gyroid',faceted:'faceted',sinusoidal:'wave',stacked:'rings',louvered:'louvered',perforated:'perforated',smooth:'diffuser'};
+  const MAT={'natural PETG':'','white PLA (shade) + PETG (base)':'white','ASA':'asa','translucent PETG':'clear'};
   for(const id in opts){const s=document.getElementById(id);opts[id].forEach(v=>{const o=document.createElement('option');o.textContent=v;s.appendChild(o)});}
-  const out=document.getElementById('b-out');
+  const out=document.getElementById('b-out'), pv=document.getElementById('b-pv');
   function build(){
     const g=id=>document.getElementById(id).value;
     const h=Math.max(60,Math.min(600,parseInt(g('b-size'))||200));
     out.textContent=`${h} mm tall ${g('b-form')}, ${g('b-sil')} silhouette, ${g('b-pat')} surface, ${g('b-mount')} between shade and base, ${g('b-sock')}, ${g('b-mat')}, 1.2 mm walls, 0.3–0.4 mm clearances, ≥25 mm bulb clearance, support-free, export STL per part.`;
+    if(window.LampPreview) pv.innerHTML=LampPreview.lamp(FORM[g('b-form')],{sil:g('b-sil').split(' ')[0],pat:PAT[g('b-pat').split(' ')[0]],mat:MAT[g('b-mat')]},'your lamp: '+g('b-form')+', '+g('b-sil')+', '+g('b-pat'));
   }
   document.querySelectorAll('.builder select,.builder input').forEach(e=>e.addEventListener('input',build));
   build();
   function copy(text,btn){
-    const done=()=>{const t=btn.textContent;btn.textContent='Copied';setTimeout(()=>btn.textContent=t,1400)};
+    const done=()=>{const t=btn.textContent;btn.textContent='Copied ✦';setTimeout(()=>btn.textContent=t,1400)};
     const fallback=(el)=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected, press Ctrl+C';setTimeout(()=>btn.textContent='Copy',2000)};
     try{navigator.clipboard.writeText(text).then(done).catch(()=>fallback(btn.previousElementSibling))}catch(e){fallback(btn.previousElementSibling)}
   }
@@ -543,6 +575,12 @@
     const f=c.dataset.f;
     document.querySelectorAll('.mount').forEach(m=>{m.hidden=!(f==='all'||m.dataset.m.split(' ').includes(f))});
   }));
+  // Theme toggle: explicit choice is stored; otherwise follow the system setting.
+  const tb=document.getElementById('theme'), root=document.documentElement, mq=matchMedia('(prefers-color-scheme: dark)');
+  const isDark=()=>root.dataset.theme?root.dataset.theme==='dark':mq.matches;
+  const sync=()=>{tb.textContent=isDark()?'☀':'☾';tb.setAttribute('aria-label',isDark()?'Switch to light theme':'Switch to dark theme')};
+  tb.addEventListener('click',()=>{root.dataset.theme=isDark()?'light':'dark';try{localStorage.setItem('lamp-theme',root.dataset.theme)}catch(e){}sync()});
+  mq.addEventListener('change',sync);sync();
 })();
 </script>
 <script src="sparkle.js"></script>
